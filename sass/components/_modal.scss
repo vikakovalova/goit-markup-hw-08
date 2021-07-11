@@ -1,0 +1,75 @@
+.backdrop {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+
+  transition: opacity $timing-duration $timing-function;
+
+  &--is-hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  &--is-hidden .modal {
+    transform: translate(-50%, -50%) scale3d(1.2, 1.2, 1.2);
+  }
+}
+
+.modal {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  padding-top: 40px;
+  min-width: 90vw;
+  min-height: 530px;
+
+  background-color: $primary-bg-color;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+
+  transform: translate(-50%, -50%) scale3d(1, 1, 1);
+  transition: transform $timing-duration $timing-function;
+
+  @media screen and (min-width: 480px) {
+    min-width: 450px;
+    min-height: 609px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    min-height: 581px;
+    min-width: 528px;
+  }
+
+  &__button {
+    @extend %button;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    background-color: inherit;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__icon {
+    width: 11px;
+    height: 11px;
+    fill: inherit;
+
+    transition: fill $timing-duration $timing-function;
+  }
+  &__button:hover &__icon,
+  &__button:focus &__icon {
+    fill: $accent-color;
+  }
+}

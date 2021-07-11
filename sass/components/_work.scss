@@ -1,0 +1,32 @@
+.work {
+  @media screen and (max-width: 1199px) {
+    display: none;
+  }
+  &__title {
+    @extend %section-title;
+  }
+  &__list {
+    display: flex;
+  }
+}
+
+.work-card {
+  position: relative;
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+  &__content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(47, 48, 58, 0.8);
+  }
+  &__title {
+    @extend %h3-like-title;
+    text-align: center;
+    color: $primary-bg-color;
+    padding-top: 27px;
+    padding-bottom: 27px;
+    margin: 0;
+  }
+}

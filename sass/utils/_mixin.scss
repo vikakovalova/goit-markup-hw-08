@@ -1,0 +1,30 @@
+@mixin hero-title($fz, $lh) {
+  font-size: $fz;
+  font-weight: 900;
+  line-height: $lh;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: $primary-bg-color;
+}
+
+@mixin section-title($fz, $lh) {
+  font-size: $fz;
+  line-height: $lh;
+  font-weight: 700;
+  color: $title-text-color;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+@mixin nav-logo($fz, $fw, $lh) {
+  font-family: "Raleway", sans-serif;
+  font-size: $fz;
+  font-weight: $fw;
+  color: $main-logo-color;
+  letter-spacing: inherit;
+  line-height: $lh;
+  font-style: normal;
+  text-decoration: none;
+
+  transition: color $timing-duration $timing-function;
+}

@@ -1,0 +1,99 @@
+.hero {
+  margin-left: auto;
+  margin-right: auto;
+
+  background-color: $hero-background;
+  text-align: center;
+  padding-top: 118px;
+  padding-bottom: 118px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/hero/hero-bcg-desk.jpg);
+
+  @media screen and (max-width: 480px) {
+    max-width: 480px;
+    background-image: linear-gradient(
+        to right,
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url(../images/hero/hero-bcg-mobile.jpg);
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          to right,
+          rgba(47, 48, 58, 0.4),
+          rgba(47, 48, 58, 0.4)
+        ),
+        url(../images/hero/hero-bcg-mobile@2x.jpg);
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    max-width: 768px;
+    background-image: linear-gradient(
+        to right,
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url(../images/hero/hero-bcg-tablet.jpg);
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          to right,
+          rgba(47, 48, 58, 0.4),
+          rgba(47, 48, 58, 0.4)
+        ),
+        url(../images/hero/hero-bcg-tablet@2x.jpg);
+    }
+  }
+
+  @media screen and (min-width: 769px) {
+    max-width: 1600px;
+    background-image: linear-gradient(
+        to right,
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url(../images/hero/hero-bcg-desk.jpg);
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          to right,
+          rgba(47, 48, 58, 0.4),
+          rgba(47, 48, 58, 0.4)
+        ),
+        url(../images/hero/hero-bcg-desk@2x.jpg);
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
+
+  &__title {
+    @include hero-title(26px, 1.615);
+    margin-bottom: 30px;
+
+    @media screen and (min-width: 1200px) {
+      @include hero-title(44px, 1.364);
+    }
+  }
+  &__button {
+    @extend .primary-button;
+  }
+}
